@@ -11,8 +11,8 @@ python 3.11.5
 - pandas
 
 ## 실행
-python main.py
+가상 머신\Scripts\activate.bat
+> python ../main.py
 ## 실행 파일 생성
-pyinstaller main.spec
-
-## spect 파일에 설정을 해주면됨
+가상 머신\Scripts\activate.bat
+pyinstaller -F -n "서이추 자동 프로그램" -w --upx-dir C:\...\upx ../main.py
