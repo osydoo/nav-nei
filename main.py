@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import *
 from tkinter import Scrollbar, ttk
 from tkinter import scrolledtext
 import asyncio
@@ -46,6 +47,16 @@ def TTkStyleConfigure(style):
         font=("Arial", 14, "bold"),
         width=20,
     )
+
+    style.configure(
+        "FullLabel.TLabel",
+        background="#fff",
+        foreground="#212121",
+        borderwidth=0,
+        font=("Arial", 12),
+        cursor="xterm",
+    )
+
     style.configure(
         "Input.TEntry",
         padding=10,
@@ -67,7 +78,7 @@ def TTkStyleConfigure(style):
 
 def WindowConfigure(window):
     window.title("네이버 자동 서이추 프로그램")
-    window.geometry("640x800+100+100")
+    window.geometry("640x950+100+100")
     window.resizable(False, False)
     window.iconbitmap()
     window.configure(bg="#fff")
@@ -508,6 +519,68 @@ def main():
         list_frame.pack(fill="x", pady=(20, 0))
 
         request_frame.pack(fill="x", padx=20, pady=20)
+
+        frame_info = ttk.LabelFrame(
+            window,
+            style="Content.TLabelframe",
+            labelwidget=ttk.Label(
+                style="LabelFrame.TLabel",
+            ),
+        )
+
+        # frame_info_name = ttk.Frame(frame_info, style="InputLabel.TFrame")
+
+        # ttk.Label(
+        #     frame_info_name,
+        #     text="개발 및 판매처 : 뿅마켙",
+        #     style="FullLabel.TLabel",
+        # ).pack(side="left")
+
+        # frame_info_name.pack(fill="x")
+
+        # frame_info_inquiry = ttk.Frame(frame_info, style="InputLabel.TFrame")
+
+        # ttk.Label(
+        #     frame_info_inquiry,
+        #     text="프로그램 관련 문의 : be_trillionaire@naver.com",
+        #     style="FullLabel.TLabel",
+        # ).pack(side="left")
+
+        # frame_info_inquiry.pack(fill="x", pady=(20, 0))
+
+        # frame_info_kakaoNickname = ttk.Frame(frame_info, style="InputLabel.TFrame")
+
+        # ttk.Label(
+        #     frame_info_kakaoNickname,
+        #     text="카카오톡 채널 @bbiyongmarket",
+        #     style="FullLabel.TLabel",
+        # ).pack(side="left")
+
+        # frame_info_kakaoNickname.pack(fill="x", pady=(20, 0))
+
+        # frame_info_kakaoId = ttk.Frame(frame_info, style="InputLabel.TFrame")
+
+        # ttk.Label(
+        #     frame_info_kakaoId,
+        #     text="http://pf.kakao.com/_xjBXAG",
+        #     style="FullLabel.TLabel",
+        # ).pack(side="left")
+
+        text = tk.Text(window, borderwidth=0)
+
+        text.insert(INSERT, "개발 및 판매처 : 뿅마켙\n")
+        text.insert(INSERT, "프로그램 관련 문의 : be_trillionaire@naver.com\n")
+        text.insert(INSERT, "카카오톡 채널 @bbiyongmarket\n")
+        text.insert(INSERT, "http://pf.kakao.com/_xjBXAG")
+        text.insert(END, "")
+
+        text.configure(state="disabled")
+
+        text.pack()
+
+        # frame_info_kakaoId.pack(fill="x", pady=(20, 0))
+
+        frame_info.pack(fill="x", padx=20, pady=20)
 
         window.after(100, getChrome)
         window.after(100, initSetting)

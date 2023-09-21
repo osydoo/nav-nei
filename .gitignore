@@ -135,3 +135,7 @@ id_list.txt
 error_log.csv
 
 naver_blog_auto
+
+.env
+
+.spec

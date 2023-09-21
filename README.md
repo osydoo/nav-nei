@@ -15,4 +15,4 @@ python 3.11.5
 > python ../main.py
 ## 실행 파일 생성
 가상 머신\Scripts\activate.bat
-pyinstaller -F -n "서이추 자동 프로그램" -w --upx-dir C:\...\upx ../main.py
+pyinstaller -F -n "프로그램" -w --upx-dir C:\...\upx ../main.py
