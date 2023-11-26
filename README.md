@@ -10,12 +10,12 @@ python 3.11.5
 - selenium
 - pandas
 
-## 실행
-가상 머신\Scripts\activate.bat
+## 실행 - / 이 아닌 \ 임
+가상 머신 경로\Scripts\activate.bat
 > python ../main.py
 ## 실행 파일 생성
-가상 머신\Scripts\activate.bat
-pyinstaller -F -n "프로그램" -w --upx-dir C:\...\upx ../main.py
+가상 머신 경로\Scripts\activate.bat
+pyinstaller -F -n "(NAME)PROGRAME_NAME version" -w --upx-dir C:\...\upx ../main.py
 
 ## version
 1.0.4
