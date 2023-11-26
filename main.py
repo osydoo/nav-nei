@@ -160,6 +160,16 @@ async def sendNeighborRequest(id, pw, msg, listbox, sum_label):
         except:
             pass
 
+        # 2
+        try:
+            WebDriverWait(driver, 300).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "#account"))
+            )
+            pass
+        except:
+            msgbox.showinfo("안내", "로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.")
+            return
+
         for id in id_list:
             try:
                 blog_url = "https://m.blog.naver.com/BuddyAddForm.naver?blogId=" + id
